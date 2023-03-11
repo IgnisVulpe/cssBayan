@@ -8,41 +8,35 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 1em;
 }
 
 .accord-meme {
     width: 100%;
-    position: relative;
 }
 
+/*комбинатор смежных элементов находящихся в одном контейнере; находит второй, есди ему предшествует первый*/
 .input-meme:checked ~ .article-meme {
-    /*display: block;*/
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .input-meme {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
+    display: none;
 }
 
-.input-meme:checked ~ .label-meme {
 
-}
 
 .label-meme {
     display: block;
     width: 100%;
-    border: 0.1em solid #000000;
+    border-bottom: 0.1em solid #000000;
+    cursor: pointer;
 }
 
 .article-meme {
     display: none;
-
-
 }
 
 .meme {
