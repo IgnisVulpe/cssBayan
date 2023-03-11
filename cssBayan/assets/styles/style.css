@@ -1,0 +1,31 @@
+.container {
+    width: 50vw;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.accord-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.accord-meme {
+    width: 100%;
+}
+
+.article-meme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.meme {
+    width: 20vw;
+    height: 20vw;
+    object-fit: contain;
+    border: 0.1em solid #000000;
+    margin: 2vh 0 2vh 0;
+
+}
