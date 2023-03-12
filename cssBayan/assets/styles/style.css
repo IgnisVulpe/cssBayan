@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+.root-container {
+    min-height: 101vh;
+    background-color: #8ac59d;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    height: 5em;
+}
+
+.container {
+    width: 45em;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2% 0 2%;
+}
+
+.title {
+    display: block;
+    height: fit-content;
+    margin: 0;
+    font-family: 'Marck Script', cursive;
+    font-size: 3em;
+}
+
+.accord-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    user-select: none;
+}
+
+.accord-container:hover .svg-plus {
+    opacity: 1;
+}
+
+.accord-container:hover .label-meme {
+    color: black;
+}
+
+.input-meme {
+    display: none;
+}
+
+.accord-container .input-meme:checked ~ .label-meme {
+    color: black;
+}
+
+.accord-meme {
+    width: 100%;
+}
+
+.accord-container:hover:active .accord-meme:hover .label-meme {
+    color: #882222;
+}
+
+.accord-container:hover:active .accord-meme:hover .label-meme path {
+    fill: #882222;
+}
+
+.accord-container:hover:active .article-meme:hover .meme,
+.label-meme:active ~ .article-meme .meme {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+/*комбинатор смежных элементов находящихся в одном контейнере; находит второй, есди ему предшествует первый*/
+.input-meme:checked ~ .article-meme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 26em;
+    transition: max-height 1s;
+}
+
+
+.label-meme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    border-bottom: 0.075em solid rgb(104, 171, 137);
+    cursor: pointer;
+    font-family: 'Marck Script', cursive;
+    font-size: 1.5em;
+    padding-bottom: 0.1em;
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.06em;
+    color: #0a7227;
+}
+
+
+/*882222FF*/
+
+.label-meme:hover ~ .article-meme,
+.article-meme:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 26em;
+    transition: max-height 1s;
+}
+
+.accord-container:hover .label-meme:hover {
+    color: #e18a1f;
+    transition: color 0.3s;
+}
+
+.accord-container:hover .input-meme:checked ~ .label-meme .svg-plus {
+    transform: rotate(405deg);
+    transition: transform 1s;
+}
+
+.accord-container:hover .label-meme:hover .svg-plus path {
+    fill: #cc8d40;
+    transition: fill 0.3s;
+}
+
+.label-meme > span {
+    display: block;
+}
+
+.svg-plus {
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    min-width: 1.5em;
+    min-height: 1.5em;
+    transition: transform 1s;
+}
+
+.article-meme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s;
+}
+
+.meme {
+    max-width: 20em;
+    max-height: 20em;
+    object-fit: contain;
+    margin: 2vh 0 2vh 0;
+    transition: max-height 1s;
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        font-size: 2.25em;
+    }
+
+    .label-meme {
+        font-size: 1em;
+    }
+
+    .input-meme:checked ~ .article-meme {
+
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .title {
+        font-size: 1.5em;
+    }
+
+    .label-meme {
+        font-size: 0.7em;
+    }
+
+    .meme {
+        max-width: 15em;
+        max-height: 15em;
+    }
+}
+
+@media screen and (min-width: 1000px) and (hover: hover) and (pointer: fine) {
+    .article-meme {
+        cursor: pointer;
+    }
+}
