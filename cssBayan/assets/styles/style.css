@@ -14,9 +14,10 @@
 }
 
 .container {
-    width: 50vw;
+    width: 45em;
     max-width: 100%;
     margin: 0 auto;
+    padding: 0 2% 0 2%;
 }
 
 .title {
@@ -43,7 +44,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 26em;
+    max-height: 26em;
+    transition: max-height 1s;
 }
 
 .input-meme {
@@ -71,17 +73,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
-    transition: height 1s;
+    transition: max-height 0.6s;
 }
 
 .meme {
-    width: 30vw;
-    height: 100%;
+    max-width: 20em;
+    max-height: 20em;
     object-fit: contain;
     margin: 2vh 0 2vh 0;
-    transition: 2s;
+    transition: max-height 1s;
 }
 
 @media screen and (max-width: 1000px) {
@@ -94,7 +96,7 @@
     }
 
     .input-meme:checked ~ .article-meme {
-        height: 20em;
+
     }
 }
 
@@ -107,7 +109,8 @@
         font-size: 0.7em;
     }
 
-    .input-meme:checked ~ .article-meme {
-        height: 10em;
+    .meme {
+        max-width: 15em;
+        max-height: 15em;
     }
 }
