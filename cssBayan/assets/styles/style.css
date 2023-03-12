@@ -57,15 +57,17 @@
 }
 
 .accord-container:hover:active .accord-meme:hover .label-meme {
-    color: #0a7227;
+    color: #882222;
 }
 
 .accord-container:hover:active .accord-meme:hover .label-meme path {
-    fill: #0a7227;
+    fill: #882222;
 }
 
-.accord-container:hover:active .article-meme:hover .meme {
+.accord-container:hover:active .article-meme:hover .meme,
+.label-meme:active ~ .article-meme .meme {
     opacity: 0.5;
+    transition: opacity 0.3s;
 }
 
 /*комбинатор смежных элементов находящихся в одном контейнере; находит второй, есди ему предшествует первый*/
@@ -91,8 +93,11 @@
     padding-bottom: 0.1em;
     text-decoration-line: underline;
     text-decoration-thickness: 0.06em;
-    color: #882222;
+    color: #0a7227;
 }
+
+
+/*882222FF*/
 
 .label-meme:hover ~ .article-meme,
 .article-meme:hover {
